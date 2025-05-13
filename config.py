@@ -34,7 +34,7 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME")
 OWNER_ID = int(os.environ.get("OWNER_ID"))
 # ------------------X------------------------------
 
-SUDO_USERS = list(map(int, getenv("SUDO_USERS", "5840594311 7621154046 7793979196").split()))
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "5840594311 7621154046 7793979196 5798579221").split()))
 # ------------------------------------------------
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID"))
 # ------------------------------------------------
