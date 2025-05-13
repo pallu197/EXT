@@ -19,7 +19,7 @@ async def careerdl(app, message, headers, raw_text2, raw_text3, prog, name):
     for x in range(0, len(num_id)):
         id_text = num_id[x]
 
-        details_url = "https://elearn.crwilladmin.com/api/v3/batch-detail/" + raw_text2 + "?topicId=" + id_text
+        details_url = "https://elearn.crwilladmin.com/api/v7/batch-detail/" + raw_text2 + "?topicId=" + id_text
         response = requests.get(details_url, headers=headers)
         data = response.json()
 
@@ -33,11 +33,11 @@ async def careerdl(app, message, headers, raw_text2, raw_text3, prog, name):
                 vid_id = data['id']
                 lesson_name = data['lessonName']
                 lessonExt = data['lessonExt']
-                url = "https://elearn.crwilladmin.com/api/v3/class-detail/" + vid_id
+                url = "https://elearn.crwilladmin.com/api/v7/class-detail/" + vid_id
                 lessonUrl = requests.get(url, headers=headers).json()['data']['class_detail']['lessonUrl']
 
                 if lessonExt == 'brightcove':
-                    url = "https://elearn.crwilladmin.com/api/v3/livestreamToken"
+                    url = "https://elearn.crwilladmin.com/api/v7/livestreamToken"
                     params = {
                         "base": "web",
                         "module": "batch",
@@ -74,7 +74,7 @@ async def careerdl(app, message, headers, raw_text2, raw_text3, prog, name):
 async def career_will(app, message):
     try:
         input1 = await app.ask(message.chat.id, text="**Send ID & Password in this manner otherwise bot will not respond.\n\nSend like this:-  ID*Password\n\n OR Send Your Token**")
-        login_url = "https://elearn.crwilladmin.com/api/v3/login-other"
+        login_url = "https://elearn.crwilladmin.com/api/v7/login-other"
         raw_text = input1.text
         if "*" in raw_text:
             headers = {
@@ -115,7 +115,7 @@ async def career_will(app, message):
     }
 
     await input1.delete(True)
-    batch_url = "https://elearn.crwilladmin.com/api/v3/my-batch"
+    batch_url = "https://elearn.crwilladmin.com/api/v7/my-batch"
     response = requests.get(batch_url, headers=headers)
     data = response.json()
     topicid = data["data"]["batchData"]
@@ -127,7 +127,7 @@ async def career_will(app, message):
     await message.reply_text(f"**HERE IS YOUR BATCH**\n\n{FFF}")
     input2 = await app.ask(message.chat.id, text="**Now send the Batch ID to Download**")
     raw_text2 = input2.text
-    topic_url = "https://elearn.crwilladmin.com/api/v3/batch-topic/" + raw_text2 + "?type=class"
+    topic_url = "https://elearn.crwilladmin.com/api/v7/batch-topic/" + raw_text2 + "?type=class"
     response = requests.get(topic_url, headers=headers)
     topic_data = response.json()
     batch_data = topic_data['data']['batch_topic']
