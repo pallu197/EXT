@@ -4,13 +4,13 @@ from os import getenv
 
 API_ID = int(getenv("API_ID", "21567814"))
 API_HASH = getenv("API_HASH", "cd7dc5431d449fd795683c550d7bfb7e)
-BOT_TOKEN = getenv("BOT_TOKEN", "7864597080:AAGBgPyZ-NJ0W_LfYLrGu708avBFnwmEp6c")
+BOT_TOKEN = getenv("BOT_TOKEN", "7476223017:AAH_cznAsOGtqPhlZATwryCxT0uCpbHFJgo")
 OWNER_ID = int(getenv("OWNER_ID", "6126688051"))
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "6126688051 6039166844").split()))
 MONGO_URL = getenv("MONGO_DB", "mongodb+srv://daxxop:daxxop@daxxop.dg3umlc.mongodb.net/?retryWrites=true&w=majority")
 
-CHANNEL_ID = int(getenv("CHANNEL_ID", "-1002726534263"))
-PREMIUM_LOGS = int(getenv("PREMIUM_LOGS", "-1002726534263"))
+CHANNEL_ID = int(getenv("CHANNEL_ID", "-1002788873966"))
+PREMIUM_LOGS = int(getenv("PREMIUM_LOGS", "-1002788873966"))
 
 """
 #
