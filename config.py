@@ -9,8 +9,8 @@ OWNER_ID = int(getenv("OWNER_ID", "6834250190"))
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "6834250190").split()))
 MONGO_URL = getenv("MONGO_DB", "mongodb+srv://daxxop:daxxop@daxxop.dg3umlc.mongodb.net/?retryWrites=true&w=majority")
 
-CHANNEL_ID = int(getenv("CHANNEL_ID", "-1002788873966"))
-PREMIUM_LOGS = int(getenv("PREMIUM_LOGS", "-1002788873966"))
+CHANNEL_ID = int(getenv("CHANNEL_ID", "-1003145375193"))
+PREMIUM_LOGS = int(getenv("PREMIUM_LOGS", "-1003145375193"))
 
 """
 #
